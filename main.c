@@ -9,9 +9,27 @@ Title: String reversal
 #include <stdlib.h>
 
 
+void stringReverse(char *name);
 int main(void)
 {
 
-printf("Hello World!");
+   char name_[]= "School";
+   printf("Unreversed string: %s\n", name_);
+   stringReverse(name_); 
+   printf("Reversed string = %s\n ",name_);
     return 0;
+}
+void stringReverse(char *name)
+{
+        char temp;
+        int length = strlen(name);
+        int midpoint = length/2;
+   
+       for(int j=0;j<midpoint;j++)
+        {
+           temp = name[j];
+           name[j]=name[(length-(j+1))];
+           name[(length-(j+1))] = temp;
+           
+        }
 }
